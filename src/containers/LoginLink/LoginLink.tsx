@@ -2,7 +2,9 @@ import React from 'react'
 
 import urlBuilder from '../../utils/urlBuilder'
 
-import App from '../../components/App'
+import Link from '../../components/Link'
+
+import content from '../../config/content'
 
 export default () => {
   const env: any = process.env
@@ -20,5 +22,5 @@ export default () => {
   }
   const authorizeUrl = urlBuilder(REACT_APP_AUTHORIZATION_BASE_URL)(params)
 
-  return <App redirectUrl={authorizeUrl}></App>
+  return <Link href={authorizeUrl} label={content.loginCta}></Link>
 }
